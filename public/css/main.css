@@ -1,0 +1,267 @@
+*{
+	margin:0px;
+	padding:0px;
+	
+	}
+	body{
+	font-family:roboto;
+	
+	}
+	h1,h2,h3,h4,h5,h6{
+	  
+	
+	}
+ 
+
+th, td {
+  border: 1px solid #ddd;
+
+
+  padding: 8px;
+}
+tr:nth-child(even){background-color: #f2f2f2;}
+tr:hover {background-color: #ddd;}	
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #BF112B;
+  color: white;
+}
+	.sections_odd{
+		min-height : 550px;
+		background-color:#eee !important;
+		padding-top : 5%;
+		padding-bottom : 5%;
+
+	} 
+	
+	.sections_even{
+		min-height : 550px;
+		background-color:#fff !important;
+		 
+			padding-top : 5%;
+		padding-bottom : 5%;
+
+	} 
+	footer{
+		padding-top : 5%;
+		background-color: #000;
+		color:#fff;
+		margin-bottom:0px  !important; 
+		padding-bottom: 0px !important;
+		
+		
+	}
+	
+	#main_title_one, #main_title_two{
+		
+		color :  #BF112B;
+	}
+
+ 
+	
+		
+		/* header section begins here */
+	
+	 #carleton_log{
+		
+		margin:0px;
+		padding: 0px;
+		
+	}
+	
+	.header_wrap{
+	 background:  url("/images/main_background.jpg") no-repeat;
+	 /* opacity:0.8; */
+	 background-position: center;
+	 background-size: cover;
+	 min-height:100vh;
+	 overflow:hidden;
+	 background-blend-mode:overlay;
+	
+	
+	}
+	
+ 
+	header .navbar{
+		
+		background-color:#000000 !important;
+	border-bottom-right-radius: 45px;
+		border-bottom-left-radius: 45px;
+		
+	}
+	
+	header #carleton_log{
+		border-radius: 35px;
+		 
+		
+	}
+	 
+ 
+	 
+	header ul li{
+	
+	 display: inline-block;
+	 margin: 0px;
+	 
+	 
+	 
+	
+	}
+	
+
+	header ul li a{
+	text-decoration:none;
+	font-size:18px;
+    font-color:#fff;
+	margin: 0 26px;
+	font-height: 300;
+	
+	
+	}
+	
+	header ul li a:hover{
+	color:#fff;
+    font-size:19px;
+	}
+	
+	header #main_input_search{
+		margin-left : 20%;
+		margin-right : 20%;
+		margin-top : 5%;
+		
+		
+	}
+	
+	header #main_input_search_button{
+		margin-left : 40%;
+		margin-right : 40%;
+		margin-top : 2%;
+		
+		
+	}
+	
+	header .main_title{
+		margin-left: 25%;
+		margin-top: 10%;
+		font-family: "Times New Roman", Times, serif;
+		color:#ffffff;
+		font-size:50px;
+		
+		
+	}
+	
+	header .main_title_two{
+		margin-left: 40%;
+		font-family: "Times New Roman", Times, serif;
+		color:#ffffff;
+		
+		
+		
+	}
+	#banner{
+		margin-left:40%; 
+		color:#fff;
+	}
+	
+	
+	/* header section done here  */
+	
+	/* Create three columns of equal width */
+.columns {
+  float: left;
+  width: 33.3%;
+  padding: 8px;
+}
+
+/* Style the list */
+.price {
+  list-style-type: none;
+  border: 1px solid #eee;
+  margin: 0;
+  padding: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+/* Add shadows on hover */
+.price:hover {
+  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+}
+
+/* Pricing header */
+.price .header {
+  background-color: #111;
+  color: white;
+  font-size: 25px;
+}
+
+/* List items */
+.price li {
+  border-bottom: 1px solid #eee;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Grey list item */
+.price .grey {
+  background-color: #eee;
+  font-size: 20px;
+}
+
+/* The "Sign Up" button */
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Change the width of the three columns to 100%
+(to stack horizontally on small screens) */
+@media only screen and (max-width: 600px) {
+  .columns {
+    width: 100%;
+  }
+}
+
+.user_swtich{
+	color:blue;
+}
+ 
+
+ 
+	
+	
+  
+  
+  div.tab-content{
+	background-color: #ffffff;
+	/* border: 1px solid #eeeeee; */
+	padding-left: 20px;
+	padding-top: 10px;
+	min-height: 500px;
+  }
+  
+ i.fas{
+	 float:left;
+ }
+#v-pills-logout-tab{
+	background-color: #BF112B;
+}
+
+div.table-alignment{
+	margin:5%;
+}
+
+h3.title-alignment{
+	margin-left:30%;
+}
+
+nav.title-alignment{
+	margin-left:40%;
+}

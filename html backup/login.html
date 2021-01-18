@@ -1,0 +1,282 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Carleton Stock Business</title>
+    
+	<link rel = "stylesheet" href = "./css/main.css" />
+	<link rel = "stylesheet" href = "./css/bootstrap.min.css" />
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <style> 
+
+	
+	</style>
+  </head>
+  <body>
+  
+ 
+  <header>
+  
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id = "navbar">
+  <a class="navbar-brand logo" href="./index.html"><img src = "./images/carleton_log.png" id = "carleton_log" width = "100px" height = "100px"></a>
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+   <h3 id = "banner"> CarleStockTrader <br></h3>
+  
+    <ul class="navbar-nav ml-auto">
+	<li class="nav-item">
+       <a class="nav-link" href = "index.html" >Home</a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link" href = "stocks.html" >Stocks</a>
+      </li>
+      
+    </ul>
+ <form class="form-inline my-2 my-lg-0" action = "login.html" >
+
+	 
+      <button class="btn btn-outline-success btn-block">OPEN AN ACCOUNT</button>
+	   
+	  
+    </form>
+  </div>
+</nav>
+  
+  </header>
+ 
+  
+ <!-- this is the end of the navbar --> 
+<div class="sections_odd text-center sections">
+ <!-- login commented out for now --> 
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+         
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                 
+
+              
+                    <div class="card">
+                        <div class="card-header" id = "user_title">
+                            <h3 id = "user_title">Login</h3>
+                        </div>
+						
+						      <!-- form card login -->
+                        <div class="card-body" id="formLogin">
+                            <form class="form" role="form" autocomplete="off" >
+                                <div class="form-group">
+                                   
+                                    <input type="text" class="form-control form-control-lg rounded-0" placeholder ="Username" required="" autofocus>
+                                </div>
+                                <div class="form-group">
+                                 
+                                    <input type="password" class="form-control form-control-lg rounded-0" id="pwd1" required="" placeholder ="Password" autofocus>
+                                </div>
+                                 
+                                <button type="button" class="btn btn-success btn-block">Login</button>
+                            </form>
+							<p id = "login_to_signup" class = "user_swtich"> New User? </p>
+                        </div>
+                        <!-- /form card login -->
+						
+						
+						
+						<!-- this is the sign up form -->
+			          <div class="card-body"  style = "display:none" id="formSignup" >
+                            <form class="form" role="form" autocomplete="off">
+							
+							 <div class="form-group" id = "user_email_warning">
+								 
+							<input type="email" class="form-control form-control-lg"  id = "user_email" onblur = "validate(1)"  placeholder="Email:name@example.com" required="">
+								</div>
+								<div class="form-group" id = "user_phone_warning">
+								 
+							<input type="phone" class="form-control form-control-lg"  id = "user_phone" onblur = "validate(2)" placeholder="Phone:xxx-xxx-xxx" required="">
+								</div>
+								
+                                <div class="form-group">
+                                   
+                                    <input type="text" class="form-control form-control-lg" placeholder ="Username" required="">
+                                </div>  
+								
+								
+								
+                                <div class="form-group" id = "user_password_warning">
+                                 
+                                    <input type="password" class="form-control form-control-lg" id = "user_password" oninput = "validatePassword(1)" required="" placeholder ="Password" >
+                                </div>
+								<div class="form-group" id = "user_confirm_password_warning">
+                                 
+                                    <input type="password" class="form-control form-control-lg"  id = "user_confirm_password" oninput = "validatePassword(2)" required="" placeholder ="Confirm Password" >
+                                </div>
+								
+									<div class="form-group">
+		 
+			               <select class="form-control form-control-lg">
+			           	<option>Carleton Student</option>
+			          	<option>Carleton Professor</option>
+			        	<option>Carleton Board Memeber</option>
+			           
+			          </select>
+				</div>
+                                 
+                                <button type="button" class="btn btn-success btn-block">Sign Up</button>
+                            </form>
+							<p id = "signup_to_login" class = "user_swtich" > Existing User? </p>
+                        </div>
+						
+						
+					
+			
+			
+			           <!-- this is the sign up form -->
+			
+                    </div>
+                    
+
+                </div>
+
+
+            </div>
+		 
+      
+			
+			<!-- this is the commented login form --> 
+			
+			
+			
+			
+			
+			
+			
+			
+        </div>
+        <!--/col-->
+    </div>
+    <!--/row-->
+</div>
+<!--/container-->
+
+ 
+
+<!-- this is for the end of the odd sections -->
+</div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- this is the beginning of the contact us -->
+  
+  <footer>
+ 
+<div class="container">
+	<div class="row">
+	    
+
+<hr />
+ <!-- Footer Elements -->
+  <div class="container">
+  
+   <!-- Social buttons -->
+    <ul class="list-unstyled list-inline text-center">
+      <li class="list-inline-item">
+        <a class="btn-floating btn-fb mx-1">
+          <i class="fab fa-facebook-f"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-tw mx-1">
+          <i class="fab fa-twitter"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-gplus mx-1">
+          <i class="fab fa-google-plus-g"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-li mx-1">
+          <i class="fab fa-linkedin-in"> </i>
+        </a>
+      </li>
+    
+    </ul>
+    <!-- Social buttons -->
+   <div class="footer-copyright text-center py-3">
+  <ul class = "list-unstyled  text-center">
+  <li class="list-inline-item">
+        
+         Aceessibility 
+       
+      </li>
+	  
+	  <li class="list-inline-item">
+        
+         Priavcy Policy
+       
+      </li>
+	  
+	    <li class="list-inline-item">
+        
+         Contact Info
+       
+      </li>
+    
+  
+    </ul>
+  <p>   © 2020 Copyright </p>
+</div>
+  </div>
+  <!-- Footer Elements -->
+
+  <!-- Copyright -->
+
+ </div>
+  
+  </footer>
+  <!-- this is the end of the ocntact us -->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+   <script src="./js/login.js"></script>
+     
+	 
+	      <script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+	 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  </body>
+</html>

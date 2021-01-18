@@ -1,0 +1,559 @@
+ 
+ 
+<%- include('./partials/header'); %> 
+ 
+
+<div class="sections_odd text-center sections">
+ 
+ 
+
+ 
+    <div class="row">
+      <div class="col-2">
+        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+ 
+          <a class="nav-link active" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-account" role="tab"   > <i class="fas fa-id-card" aria-hidden="true"></i>
+          Account</a>
+          <a class="nav-link " id="v-pills-profile-tab" data-toggle="pill" href="#portfolio-info" role="tab"   ><i class="fas fa-archive" aria-hidden="true"></i>
+            Stock Profile</a>
+         
+          <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#current_order" role="tab"  > <i class="fas fa-shopping-cart"></i> Current Orders</a>
+          <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#watchlist" role="tab"  > <i class="fas fa-list" aria-hidden="true"></i> Watchlist</a>
+          <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#event_subscription" role="tab"  > <i class="fas fa-flag" aria-hidden="true"></i>
+            Events Subscription</a>
+          <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#account_history" role="tab"  > <i class="fas fa-history" aria-hidden="true"></i>
+            Acount History</a>
+
+         
+
+
+           <form method = "post" action = "profile">
+          <button class="btn btn-outline-danger"    role="tab"    name = "logout_button" value = "1" type = "submit">Logout</button>
+         </form>
+        </div>
+      </div>
+      <div class="col-10">
+        <div class="tab-content " id="v-pills-tabContent">
+         
+          <div class="tab-pane fade show active" id="v-pills-account" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+            
+            <h2>Account Summary</h2>
+            <table class="table  table-dark">
+            <thead>
+              <tr>
+                <th scope="col">Username</th>
+                <th scope="col">Current Cash Balance</th>
+                <th scope="col">Current Portfolio Value</th>
+            
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><%= summary.username %></td>
+                <td><%= summary.balance %></td>
+                <td><%= summary.portfolio_balance %></td>
+         
+              </tr>
+              
+            </tbody>
+          </table>
+
+
+           
+<div class="container">
+  <h2>Withdraw/Desposit</h2>
+ 
+  <form  method="post" action = "profile">
+    <div class="form-group  row">
+      <label for="withdraw_amount" class=" col-form-label">Withdraw Amount</label>
+      <input type="text" class="form-control" name = "withdraw" id="withdraw"   >
+      <button class = "btn btn-block btn-secondary" type = "submit" name = "withdraw_button" value = "1">Withdraw</button>
+    </div>
+  </form>
+
+  <form  method="post" action = "profile">
+    <div class="form-group  row">
+      <label for="deposit_amount" class=" col-form-label">Desposit Amount</label>
+      <input type="number" class="form-control" id="deposit_amount" name = "deposit" placeholder="please enter your deposit amount">
+      <button class = "btn btn-block btn-success"  type = "submit" name = "deposit_button" value ="1" >Desposit</button>
+    </div>
+  </form>
+</div>
+
+
+<!-- this is for the fund transfer history -->
+<div class = "row ">
+  <div class = "container ">
+  <h2 class = "title-alignment"> Fund history</h2>
+
+  <div class = "row">
+    <form >
+      <div class = "form-group">
+        <label for="date_fund_start">Start Date</label>
+    <input   class=" form-control-sm" type="date" id="date_fund_start" >
+
+    </div>
+    <div class = "form-group" >
+      <label for="date_fund_end">End Date</label>
+    <input   class="form-control-sm" type="date" id="date_fund_end" >
+</form>
+  </form>
+
+  </div>
+  <table class="table table-responsive table-striped"   >
+             
+    <thead>
+        <tr>
+            <th>Fund Amount</th>
+            <th>Operation Method</th>
+        
+            <th>Datetime</th>
+    
+          
+            
+            
+        </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><input class="form-control form-control-lg" type="text" placeholder="DespoitSearch"> </td>
+        <td>  <input class="form-control form-control-lg" type="text" placeholder="Witdrawl Search"></td>
+     
+        
+        <td> <input   class="form-control form-control-lg" type="date" id="date_fund_transfer" ></td>
+    
+         
+
+    </tr>
+
+     <% if(locals.f_history[0]) {
+        f_history.forEach(each_item_fund =>{ %> 
+        <tr>
+          <td><%=  each_item_fund.fund_amount %>	</td>
+          <td><%=  each_item_fund.operation_type %>	</td>
+            <td><%=  each_item_fund.operation_time %></td>
+       
+             
+ 
+        </tr>
+      <% })} %> 
+       
+    </tbody>
+</table>
+<nav class="  title-alignment">
+  <ul class="pagination">
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+ </div>
+        
+        </div>
+      </div>
+        </div>
+
+<!-- this is the account info end -->
+        <!--this is the stock profile-->
+          <div class="tab-pane fade" id="portfolio-info" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+              <h2 class="title-alignmnet"> Stock Portofilio</h2>
+             
+              <table class="table table-responsive" cellspacing="0">
+               
+                  <thead>
+                      <tr>
+                          <th>Stock Name</th>
+                          <th>Stock Code</th>
+                          <th>Average Price</th>
+                          <th>Price Paid</th>
+                          <th>Volume(how many shares)</th>
+                        
+                          
+                          <th  colspan="5"> Operation </th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td> GE  </td>
+                          <td>  General Electric Co</td>
+                          <td>7.29	</td>
+                          <td>3.29	</td>
+                          <td>12	</td>
+                        
+                          <td><button class = "btn btn-lg btn-outline-primary"><a href = "detail.html"> More.. </a> </button> </td>
+                          <td><button class = "btn btn-lg btn-outline-success"> Buy  </button> </td>
+     <td><button class = "btn btn-lg btn-outline-secondary"> Sell  </button> </td>
+     <td><button class = "btn btn-lg btn-outline-info"> Add to Watchlist </button> </td>
+     <td><button class = "btn btn-lg btn-outline-warning"> Subscribe </button> </td>
+               
+                      </tr>
+                      <tr>
+                        <td>BAC  </td>
+                        <td> Bank of America Corp</td>
+                        <td>39.99	</td>
+                        <td>9.99	</td>
+                        <td>13	</td>
+                       
+                        <td><button class = "btn btn-lg btn-outline-primary"><a href = "detail.html"> More.. </a> </button> </td>
+                        <td><button class = "btn btn-lg btn-outline-success"> Buy  </button> </td>
+   <td><button class = "btn btn-lg btn-outline-secondary"> Sell  </button> </td>
+   <td><button class = "btn btn-lg btn-outline-info"> Add to Watchlist </button> </td>
+   <td><button class = "btn btn-lg btn-outline-warning"> Subscribe </button> </td>
+                    
+                      </tr>
+                      <tr>
+                        <td>BAC  </td>
+                        <td> Ford Motor Co</td>
+                        <td>19.99	</td>
+                        <td>1.99	</td>
+                        <td>100		</td>
+                       
+                        <td><button class = "btn btn-lg btn-outline-primary"><a href = "detail.html"> More.. </a> </button> </td>
+                        <td><button class = "btn btn-lg btn-outline-success"> Buy  </button> </td>
+   <td><button class = "btn btn-lg btn-outline-secondary"> Sell  </button> </td>
+   <td><button class = "btn btn-lg btn-outline-info"> Add to Watchlist </button> </td>
+   <td><button class = "btn btn-lg btn-outline-warning"> Subscribe </button> </td>
+              
+                      </tr>
+                  </tbody>
+              </table>
+              </div>
+
+
+
+
+          </div>
+ <div class="tab-pane fade" id="current_order" role="tabpanel"  >
+
+  <h2 class="title-alignmnet"> Current Order</h2>
+             
+  <table class="table" cellspacing="0">
+   
+      <thead>
+          <tr>
+              <th>Stock Symbol</th>
+              <th>Type of Order(Buy/Sell)</th>
+              <th>Price</th>
+              <th>Volume(how many shares)</th>
+            
+              
+              <th  colspan="4"> Operation </th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td> GE  </td>
+              <td> Sell</td>
+              <td>7.29	</td>
+              <td>12	</td>
+            
+       
+              <td><button class = "btn btn-lg btn-outline-danger"> Cancel </button> </td>
+        
+          </tr>
+          <tr>
+            <td>BAC  </td>
+            <td> Buy</td>
+            <td>39.99	</td>
+            <td>13	</td>
+           
+            <td><button class = "btn btn-lg btn-outline-danger"> Cancel </button> </td>
+          </tr>
+          <tr>
+            <td>BAC  </td>
+            <td> Sell</td>
+            <td>19.99	</td>
+            <td>100		</td>
+           
+            <td><button class = "btn btn-lg btn-outline-danger"> Cancel </button> </td>
+          </tr>
+      </tbody>
+  </table>
+
+
+ </div>
+
+
+ <div class="tab-pane fade" id="watchlist" role="tabpanel"  >
+
+<button class = "btn btn-block btn-outline-dark"> + New Watchlist</button>
+<div class = "container">
+  <h3 class="title-alignmnet"> Watchlist1</h3>
+             
+  <table class="table" cellspacing="0">
+   
+      <thead>
+          <tr>
+              <th>Stock Symbol</th>
+              <th>Current Price</th>
+              <th> Current Bid/Ask</th>
+              <th>Daily Number of Trades</th>
+            
+              
+              <th  colspan="4"> Operation </th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td> GE  </td>
+              <td>7.99</td>
+              <td>3.29	</td>
+              <td>300000	</td>
+            
+              <td><button class = "btn btn-lg btn-outline-primary"><a href = "detail.html"> More.. </a> </button> </td>
+              <td><button class = "btn btn-lg btn-outline-danger"> Remove </button> </td>
+               
+          </tr>
+          <tr>
+            <td>BAC  </td>
+            <td> 56</td>
+            <td>39.99	</td>
+            <td>13222222	</td>
+           
+            <td><button class = "btn btn-lg btn-outline-primary"><a href = "detail.html"> More.. </a> </button> </td>
+            <td><button class = "btn btn-lg btn-outline-danger"> Remove </button> </td>
+          </tr>
+          
+      </tbody>
+  </table>
+</div>
+
+
+
+
+<div class = "container">
+  <h3 class="title-alignmnet"> Watchlist2</h3>
+             
+  <table class="table" cellspacing="0">
+   
+      <thead>
+          <tr>
+              <th>Stock Symbol</th>
+              <th>Current Price</th>
+              <th> Current Bid/Ask</th>
+              <th>Daily Number of Trades</th>
+            
+              
+              <th  colspan="4"> Operation </th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td> GE  </td>
+              <td>7.99</td>
+              <td>3.29	</td>
+              <td>300000	</td>
+            
+              <td><button class = "btn btn-lg btn-outline-primary"><a href = "detail.html"> More.. </a> </button> </td>
+              <td><button class = "btn btn-lg btn-outline-danger"> Remove </button> </td>
+               
+          </tr>
+   
+          
+      </tbody>
+  </table>
+</div>
+
+ </div>
+
+
+ <!-- this is the even subcription section start -->
+ <div class="tab-pane fade" id="event_subscription" role="tabpanel"  >
+ 
+  
+
+  <h2 class="title-alignmnet"> Subscription Events</h2>
+             
+              <table class="table table-responsive" cellspacing="0">
+               
+                  <thead>
+                      <tr>
+                          <th>Stock Name</th>
+                          <th>Stock Code</th>
+                          <th>Change%</th>
+                          <th>Change Trend</th>
+                          <th> Minimum Change Setting </th>
+                          <th colspan="4"> Operations</th>
+  
+                        
+                          
+                
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td> GE  </td>
+                          <td>  General Electric Co</td>
+                          <td>7%	</td>
+                          <td>Increase	</td>
+                          <td>5%
+                            <input type="number" class="form-control" id="deposit_amount" placeholder="set %">
+                           <input type = "submit" class = "btn btn-primary value = "Apply" >
+                          </td>
+                        
+                          <td><button class = "btn btn-lg btn-outline-primary"><a href = "detail.html"> More.. </a> </button> </td>
+                          <td><button class = "btn btn-lg btn-outline-danger"> Cancel Subscription  </button> </td>
+  
+     <td><button class = "btn btn-lg btn-outline-info">Deactive Subscription</button> </td>
+     <td><button class = "btn btn-lg btn-outline-warning"> Active Subscription </button> </td>
+               
+                      </tr>
+                    
+                  </tbody>
+              </table>
+              </div>
+
+
+
+  
+
+
+   <!-- this is the event subscription end -->
+
+
+   <!-- this is the account history start -->
+   <div class="tab-pane fade center" id="account_history" role="tabpanel"   >
+  <div class = "row table-alignment">
+    <h3 class = "title-alignment"> Stock Transction History</h3>
+
+    <div class = "row">
+      <form >
+        <div class = "form-group">
+          <label for="date_transction_start">Start Date</label>
+      <input   class=" form-control-sm" type="date" id="date_transction_start" >
+
+      </div>
+      <div class = "form-group" >
+        <label for="date_transction_end">End Date</label>
+      <input   class="form-control-sm" type="date" id="date_transction_end" >
+  </form>
+    </form>
+
+    </div>
+    <table class="table table-responsive " >
+               
+      <thead>
+          <tr>
+              <th>Stock Name</th>
+              <th>Stock Code</th>
+              <th>Buy/Sell</th>
+              <th>Datetime</th>
+              <th>Volume(how many shares)</th>
+              <th>Price</th>
+            
+              
+              
+          </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input class="form-control form-control-lg" type="text" placeholder="Stock Name Search"> </td>
+          <td>  <input class="form-control form-control-lg" type="text" placeholder="Stock Code Search"></td>
+          <td><select class="selectpicker">
+            <option>All</option>
+            <option>Buy</option>
+            <option>Sell</option>
+          </select>
+          </td>
+          
+          <td> <input   class="form-control form-control-lg" type="date" id="date_transction" ></td>
+          <td><input class="form-control form-control-lg" type="text" placeholder="Stock Volume Search">	</td>
+          <td><input class="form-control form-control-lg" type="text" placeholder="Stock Price Search"></td>
+           
+
+      </tr>
+
+
+          <tr>
+              <td> GE  </td>
+              <td>  General Electric Co</td>
+              <td>Buy	</td>
+              
+              <td>2020-10-19 20:41:09</td>
+              <td>100	</td>
+              <td>3.29	</td>
+               
+   
+          </tr>
+          <tr>
+            <td>BAC  </td>
+            <td> Bank of America Corp</td>
+            <td>Buy	</td>
+              
+            <td>2020-10-19 20:41:09.	</td>
+            <td>990	</td>
+            <td>13.99	</td>
+            
+          </tr>
+         
+      </tbody>
+  </table>
+  <nav class="  title-alignment">
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+   </div>
+
+
+
+
+
+   </div>
+      <!-- this is for the table of account history end -->
+   <!-- this is for the table of account history-->
+
+
+
+
+ 
+
+ </div>
+
+
+      
+        </div>
+      </div>
+    </div>
+</div>
+  
+ 
+  
+  
+  </div>
+  
+  
+  
+      
+      
+      
+      
+      
+<%- include('./partials/footer'); %> 

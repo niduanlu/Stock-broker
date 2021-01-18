@@ -1,0 +1,97 @@
+ 
+ 
+<%- include('./partials/header'); %> 
+ 
+
+ 
+ <!-- this is the end of the navbar --> 
+<div class="sections_odd text-center sections">
+    <div class="container">
+    
+      <!-- Portfolio Item Heading -->
+      <h1 class="my-4"><%=  product[0].name %>
+      
+      </h1>
+    
+      <!-- Portfolio Item Row -->
+      <div class="row">
+    
+        <!-- <div class="col-md-8">
+     <nav class="nav nav-pills nav-justified">
+        <a href="#" class="nav-item nav-link active">1D</a>
+        <a href="#" class="nav-item nav-link">5D</a>
+        <a href="#" class="nav-item nav-link">1M</a>
+        <a href="#" class="nav-item nav-link">6M</a>
+        <a href="#" class="nav-item nav-link">YTD</a>
+        <a href="#" class="nav-item nav-link">1Y</a>
+        <a href="#" class="nav-item nav-link">5Y</a>
+        <a href="#" class="nav-item nav-link">MAX</a>
+    </nav>
+          <img    alt="/images/stock.jpg" src = "/images/stock.jpg">
+        </div> -->
+    
+        <div class="col-md-12">
+          
+          <h3>NASDAQ:<%=  product[0].code %></h3>
+           <h4><%= product[0].value %> USD <%= product[0].change %>% (<%= product[0].change_range %>%) </h4>
+           <h6>Closed: <%= product[0].closed %></h6>
+          
+          <td><button class = "btn btn-md btn-outline-primary"><i class="fas fa-shopping-cart"></i> Buy  </button> </td>
+             <td><button class = "btn btn-md btn-outline-secondary"><i class="fas fa-hand-point-right"></i> Sell  </button> </td>
+             <td><button class = "btn btn-md btn-outline-info"><i class="fas fa-flag" aria-hidden="true"></i>  Watch </button> </td>
+             <td><button class = "btn btn-md btn-outline-warning"> <i class="fas fa-star"></i> Subscribe </button> </td>
+         
+        </div>
+    
+      </div>
+      <!-- /.row -->
+    
+    
+    
+    <hr />
+      <h3>Key Data
+      
+      </h3>
+    
+     <div class="row">
+     
+    
+     <hr>
+        <div class="col-md-6">
+         
+     <ul class="list-group" >
+      <li class="list-group-item"><h6> Exchange:<small> <%= product[0].exchange %></small></h6></li>
+       <li class="list-group-item"><h6> Sector:<small> <%= product[0].sector %></small></h6></li>
+      <li class="list-group-item"><h6> Industry:<small> <%= product[0].indudstry %></small></h6></li>
+     <li class="list-group-item"><h6> Today's High/Low:<small> $ <%= product[0].change %></small></h6></li>
+     <li class="list-group-item"><h6> Average Volume:<small><%= product[0].average_volume %></small></h6></li>
+    </ul>
+     </div>
+     
+        <div class="col-md-6">
+     <ul class="list-group" >
+      <li class="list-group-item"><h6> Previous Close:<small> $<%= product[0].previous_close %></small></h6></li>
+       <li class="list-group-item"><h6> Market Cap:<small> <%= product[0].market_cap %></small></h6></li>
+      <li class="list-group-item"><h6> Annualized Dividend:<small> $<%= product[0].annualized_devidend %></small></h6></li>
+     <li class="list-group-item"><h6> Current Yield:<small> <%= product[0].current_yield %>%</small></h6></li>
+     <li class="list-group-item"><h6>Earnings Per Share(EPS):<small>$<%= product[0].earning_per_share %></small></h6></li>
+    </ul>
+     </div>
+     
+     
+     </div>
+    
+    
+    
+       
+    
+    </div>
+    <!-- /.container -->
+    </div>
+      
+      
+      
+      
+      
+      
+<%- include('./partials/footer'); %> 

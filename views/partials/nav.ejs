@@ -1,0 +1,45 @@
+
+  
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top" id = "navbar">
+    <a class="navbar-brand logo" href="#"><img src = "/images/carleton_log.png" id = "carleton_log" width = "100px" height = "100px"></a>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <h3 id = "banner"> CarleStockTrader <br></h3>
+    
+      <ul class="navbar-nav ml-auto">
+      
+      <li class="nav-item">
+         <a class="nav-link" href = "/" >Home</a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link" href = "/stock">Stocks</a>
+        </li>
+        
+      </ul>
+      <% if(!locals.username) {
+        console.log("there is no sessio presented"); %> 
+      <form class="form-inline my-2 my-lg-0" action = "/user" >
+  
+        <button class="btn btn-outline-success btn-block ">OPEN AN ACCOUNT</button>
+        
+        
+      </form>
+
+      <% }else{
+        console.log("session is here"); %>
+
+        <form class="form-inline my-2 my-lg-0" action = "/profile" >
+  
+          <button class="btn btn-outline-info btn-block "><%= username %>'s Profile</button>
+          
+          
+        </form>
+
+
+     <% } %> 
+    </div>
+  </nav>

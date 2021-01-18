@@ -1,0 +1,77 @@
+ 
+ 
+<%- include('./partials/header'); %> 
+ 
+
+<div class="sections_odd text-center sections">
+    <!-- Page Content -->
+        <div class="container">
+    
+          <!-- Page Heading -->
+          <h1 class="my-4">Trading
+            
+          </h1>
+    
+          <!-- Project One -->
+          <hr />
+          <% product.forEach((each_product) => { %>
+          <div class="row">
+            <div class="col-md-3">
+           
+                <h4> <%= each_product.name %> </h4>
+                <h5> NASDAQ:  <%= each_product.code %> </h5>
+             
+            
+                
+            </div>
+            <div class="col-md-6">
+               
+              <p> Closed: <%= each_product.closed %></p>
+              <p>  After hours (<%= each_product.change %>) </p>
+             
+            </div>
+              <div class="col-md-3 buy_button">
+                   <h4> $<%= each_product.value %> USD </h4>
+                <h5> <%= each_product.change_range %>% </h5>
+                <form action="detail/<%- each_product.id %>" method="get">
+                   
+                  <input type = "submit" class = "btn btn-info btn-block "  value = "More.."   > 
+               </form>
+            </div>
+          </div>
+          <!-- /.row -->
+          <hr />
+          <% }); %>
+          
+    
+          <hr>
+     
+     
+    
+          <!-- Pagination -->
+          <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        <li class="page-item disabled">
+          <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#">Next</a>
+        </li>
+      </ul>
+    </nav>
+    <!--pagination -->
+    
+        </div>
+        <!-- /.container -->
+    
+    </div>
+      
+      
+      
+      
+      
+      
+<%- include('./partials/footer'); %> 
